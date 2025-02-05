@@ -1,0 +1,36 @@
+/* styles.css */
+
+
+.fixed-text,
+.typing-container {
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    font-weight: 700;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+.typing-container {
+    overflow: hidden;
+}
+
+.typing-container,
+.cursor {
+    background: linear-gradient(90deg, purple, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+.cursor {
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
