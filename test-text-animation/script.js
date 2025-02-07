@@ -1,8 +1,9 @@
 // script.js
 const texts = [
-    "Ace that Chemistry test.",
-    "Top your Biology class.",
-    "Unleash your Potential."
+    "Ace that Chemistry Test.",
+    "Top your Biology Class.",
+    "Unleash your Potential.",
+    "Become the Academic MVP."
 ]; // 🔹 List of texts to cycle through
 
 let textIndex = 0; // Tracks current text in rotation
@@ -38,9 +39,10 @@ function typeEffect() {
     }
 
     // Adjust typing/deleting speed
-    const speed = isDeleting ? 30: 50; // Typing speed: 100ms, Deleting: 50ms
+    const speed = isDeleting ? 30: 50; // Typing speed: 50ms, Deleting: 30ms
     setTimeout(typeEffect, speed);
 }
 
 // Start the animation on page load
 document.addEventListener("DOMContentLoaded", typeEffect);
+
