@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       rel="stylesheet"
       as="style"
@@ -17,29 +18,40 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
+  
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#1a1122] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
 
         <!--the whole header-->
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#362447] px-10 py-3">
+
+          <!--logo and name-->
           <div class="flex items-center gap-4 text-white">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
             </div>
             <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Lumi</h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
+
+          <!--nav bar-->
+          <nav class="flex flex-1 gap-6 justify-end text-base tracking-tight mr-12 pl-12">
+            <a href="#" class="hover:text-[#ad93c8] transition-colors">Dashboard</a>
+            <a href="#" class="hover:text-[#ad93c8] transition-colors">Forum</a>
+            <a href="#" class="hover:text-[#ad93c8] transition-colors">Search</a>
+          </nav>
+
+          <div class="flex justify-end gap-8">
             <div class="flex gap-2">
 
-                <!--get started header button-->
-                <button
+              <!--get started header button-->
+              <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#362447] text-white text-sm font-bold leading-normal tracking-[0.015em]">
                 <span class="truncate">Get Started</span>
               </button>
 
-                <!--question mark button-->
-                <button
+              <!--question mark button-->
+              <button
                 class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#362447] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
                 <div class="text-white" data-icon="Question" data-size="20px" data-weight="regular">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
@@ -49,13 +61,14 @@
                   </svg>
                 </div>
               </button>
+
             </div>
 
             <!--profile pic, should make into a button-->
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              style='background-image: url("https://cdn.usegalileo.ai/sdxl10/4ec79665-d426-4c5c-9bf8-31bf5a40700d.png");'
-            ></div>
+            <div id="profile-container">
+              <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/4ec79665-d426-4c5c-9bf8-31bf5a40700d.png");'
+              ></div>
+            </div>
             
           </div>
         </header>
@@ -78,19 +91,21 @@
 
                 <!--sign in button-->
                 <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#362447] text-white text-base font-bold leading-normal tracking-[0.015em] grow"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#362447] text-white text-base font-bold leading-normal tracking-[0.015em] grow transition transform hover:scale-105 active:scale-90"
                 >
                   <span class="truncate">Sign In</span>
                 </button>
 
                 <!--get started button-->
                 <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#8019e6] text-white text-base font-bold leading-normal tracking-[0.015em] grow"
+                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#8019e6] text-white text-base font-bold leading-normal tracking-[0.015em] grow transition transform hover:scale-105 active:scale-95"
                 >
                   <span class="truncate">Get Started with Lumi</span>
                 </button>
               </div>
             </div>
+
+            <!--features-->
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Features</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-1 gap-3 rounded-lg border border-[#4d3465] bg-[#261a32] p-4 flex-col">
