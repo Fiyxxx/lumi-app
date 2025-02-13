@@ -55,6 +55,18 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 });
 
+//replace get started button with profile pic when logged in
+document.addEventListener("DOMContentLoaded", function () {
+    const isLoggedIn = false; // Change this to true when user is logged in
+    const getStartedBtn = document.getElementById("get-started-btn");
+    const profileContainer = document.getElementById("profile-container");
 
-
+    if (isLoggedIn) {
+        getStartedBtn.classList.add("hidden"); // Hide the Get Started button
+        profileContainer.classList.remove("hidden"); // Show the Profile Picture
+    } else {
+        getStartedBtn.classList.remove("hidden"); // Show Get Started button
+        profileContainer.classList.add("hidden"); // Hide Profile Picture
+    }
+});
 
