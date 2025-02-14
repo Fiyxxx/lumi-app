@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <!-- Preload Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Lumi | Sign Up</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="script.js"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#1a1122] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+
+        <!-- ✅ Header Section -->
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#362447] px-10 py-3">
+          
+          <!-- Logo and App Name -->
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Lumi</h2>
+          </div>
+        </header>
+
+        <!-- ✅ Main Content (Sign-Up Form) -->
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[800px] py-5 max-w-[960px] flex-1 items-center min-h=screen">
+
+            <!-- Title -->
+            <p class="text-white text-3xl font-bold leading-tight tracking-[-0.015em] px-4 text-center pb-3 pt-5">
+              Welcome to Lumi
+            </p>
+
+            <!-- Sign-Up & Login Toggle with Click Event -->
+            <div class="flex flex-wrap gap-3 p-4 justify-center">
+                <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
+                    Sign up
+                    <input type="radio" class="invisible absolute" name="auth-option" id="signup-option" checked onclick="toggleFields()" />
+                </label>
+                <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
+                    Log in
+                    <input type="radio" class="invisible absolute" name="auth-option" id="login-option" onclick="toggleFields()" />
+                </label>
+            </div>
+
+            <!-- Email Field (Hidden in Login Mode) -->
+            <div id="email-field" class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3 justify-center">
+                <label class="flex flex-col min-w-40 flex-1">
+                    <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
+                    <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter your email" />
+                </label>
+            </div>
+  
+
+            <!-- Username Field -->
+            <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Username</p>
+                <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter username" />
+              </label>
+            </div>
+
+            <!-- Password Field -->
+            <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+              <label class="flex flex-col min-w-40 flex-1">
+                <p class="text-white text-base font-medium leading-normal pb-2">Password</p>
+                <input type="password" class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter password" />
+              </label>
+            </div>
+
+            <!-- Continue Button -->
+            <div class="flex px-4 py-3 min-w-[480px] mt-[20]">
+              <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
+                <span class="truncate">Continue</span>
+              </button>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <p class="text-[#ad93c8] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
+              By signing up, you agree to our Terms of Service and Privacy Policy.
+            </p>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+
