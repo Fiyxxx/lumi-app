@@ -70,11 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// make email field disappear if login
+// make email field and notice disappear if login
 function toggleFields() {
   const emailField = document.getElementById("email-field");
+  const notice = document.getElementById("notice");
   const isLogin = document.getElementById("login-option").checked;
 
   // Hide email field if Login is selected, otherwise show it
   emailField.style.display = isLogin ? "none" : "flex";
+  notice.style.display = isLogin ? "none" : "flex";
 }
