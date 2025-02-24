@@ -35,3 +35,13 @@ body {
     opacity: 0;
     animation: fade-in 2s ease-in forwards;
 }
+
+
+.fade-in-user-dashboard {
+    animation: fade-in 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+a {
+    text-decoration: none;
+}
