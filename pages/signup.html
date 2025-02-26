@@ -12,7 +12,7 @@
     <title>Lumi | Sign Up</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <script src="../js/signup.js" defer></script>
+    <script src="../js/script.js" type="module" defer></script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
@@ -31,7 +31,8 @@
                 <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
               </svg>
             </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Lumi</h2>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+              <a href="../">Lumi</a></h2>
           </div>
         </header>
 
@@ -83,9 +84,13 @@
 
             <!-- Continue Button -->
             <div class="flex px-4 py-3 min-w-[480px] mt-[20]">
-              <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
-                <span class="truncate">Continue</span>
-              </button>
+              <a href="dashboard.html">
+                <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
+                <span class="truncate">
+                  Continue
+                </span>
+                </button>
+              </a>
             </div>
 
             <!-- Terms & Conditions -->
