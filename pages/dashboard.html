@@ -1,0 +1,145 @@
+<html>
+    <!--Need to create a session after the User has logged in-->
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../css/styles.css"/>
+    <script src="../js/script.js" defer></script>
+
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#1a1122] dark group/design-root overflow-x-hidden" style='font-family: Inter, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#362447] px-10 py-3">
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+            </div>
+
+            <!--Include link back to index interface-->
+            <a href="#">
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Lumi</h2>
+            </a>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+
+            <!-- Need to include the links for the create and discover portion-->
+              <a class="text-white text-sm font-medium leading-normal" href="#">Discover</a>
+              <a class="text-white text-sm font-medium leading-normal" href="#">Create</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#8019e6] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              onclick = "window.location.href = ''">
+                <span class="truncate">Upgrade</span>
+              </button>
+              <!--Trying to include bootstrap dropdown menu for profile settings-->
+              <button
+                class="btn btn-secondary dropdown-toggle flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#362447] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                id = "profileDropdown"type = "button" aria-haspopup="true" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="truncate">Profile</span>
+              </button>
+              <div class="dropdown-menu" aria-labelledby = "profileDropdown">
+                <a class = "dropdown-item">Settings</a>
+                <a class = "dropdown-item">Log out</a>
+                <a class = "dropdown-item">Contact us</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+
+            <!--To include the username here-->
+            <h1 class="text-white tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-3 pt-6 fade-in-user-dashboard">Let's get started</h1>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+
+            <!-- Include link to the AI-->
+            <!-- First button labelled 'AI Flashcards'-->
+            <a href="">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#4d3465] bg-[#261a32] p-4 flex-col">
+                <div class="text-white" data-icon="Robot" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-28,16v24H120V152ZM80,164a12,12,0,0,1,12-12h12v24H92A12,12,0,0,1,80,164Zm84,12H152V152h12a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-white text-base font-bold leading-tight">AI Flashcards</h2>
+                  <p class="text-[#ad93c8] text-sm font-normal leading-normal">Generate flashcards from any document</p>
+                </div>
+              </div>
+            </a>
+            <!-- Include link to the creation page for the flashcards-->
+             <!-- Second button labelled 'Create New'-->
+            <a href="">
+              <div class="flex flex-1 gap-3 rounded-lg border border-[#4d3465] bg-[#261a32] p-4 flex-col">
+                <div class="text-white" data-icon="PlusCircle" data-size="24px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm48-88a8,8,0,0,1-8,8H136v32a8,8,0,0,1-16,0V136H88a8,8,0,0,1,0-16h32V88a8,8,0,0,1,16,0v32h32A8,8,0,0,1,176,128Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="flex flex-col gap-1">
+                  <h2 class="text-white text-base font-bold leading-tight">Create New</h2>
+                  <p class="text-[#ad93c8] text-sm font-normal leading-normal">Manually create your own flashcards</p>
+                </div>
+              </div>
+            </a>
+            </div>
+
+            <!--Start of the list for the study sets, need to be programmed dynamically such that the list updates when the user starts a new study set, currently hard coded as per below-->
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Your Study Sets</h2>
+                <div>
+                    <div class="flex items-center gap-4 bg-[#1a1122] px-4 min-h-[72px] py-2 justify-between w-full">
+                        <div class="flex items-center gap-4"> 
+                            <div
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                            style='background-image: url("https://t4.ftcdn.net/jpg/06/30/17/23/240_F_630172348_PdusiUUag4Lg0NZu5RossnhhnEHxI2jn.jpg");'
+                            ></div>
+                            <div class="flex flex-col justify-center">
+                            <p class="text-white text-base font-medium leading-normal line-clamp-1">Mathematics</p>
+                            <p class="text-[#ad93c8] text-sm font-normal leading-normal line-clamp-2">7 cards</p>
+                            </div>
+                        </div>
+                    <div class="shrink-0"><button class="text-base font-medium leading-normal hover:border hover:border-gray-400 hover:bg-gray-400 hover:rounded-lg p-2">Study</button></div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-4 bg-[#1a1122] px-4 min-h-[72px] py-2 justify-between w-full">
+                        <div class="flex items-center gap-4"> 
+                            <div
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                            style='background-image: url("https://t3.ftcdn.net/jpg/11/54/95/28/240_F_1154952862_OXnBH6kfqThEzjP36NTeoNYQGj03hIq9.jpg");'
+                            ></div>
+                            <div class="flex flex-col justify-center">
+                            <p class="text-white text-base font-medium leading-normal line-clamp-1">Chemistry</p>
+                            <p class="text-[#ad93c8] text-sm font-normal leading-normal line-clamp-2">4 cards</p>
+                            </div>
+                        </div>
+                    <div class="shrink-0"><button class="text-base font-medium leading-normal hover:border hover:border-gray-400 hover:bg-gray-400 hover:rounded-lg p-2">Study</button></div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
