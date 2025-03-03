@@ -9,10 +9,15 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href = "../css/styles.css">
+
     <title>Lumi | Sign Up</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <script src="../js/script.js" type="module" defer></script>
+
+    <script src="../js/script.js" defer></script>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
@@ -34,6 +39,17 @@
             <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
               <a href="../">Lumi</a></h2>
           </div>
+
+          <div class="flex flex-wrap gap-5 justify-center">
+            <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
+                Sign up 
+                <input type="radio" class = "hidden" name="auth-option" id="signup-option" onchange="showContent('sign-up-page')" />
+            </label>
+            <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
+                Log in
+                <input type="radio" class = "hidden" name="auth-option" id="login-option" onchange="showContent('login-page')" />
+            </label>
+          </div>
         </header>
 
         <!-- ✅ Main Content (Sign-Up Form) -->
@@ -45,60 +61,123 @@
               Welcome to Lumi
             </p>
 
-            <!-- Sign-Up & Login Toggle with Click Event -->
-            <div class="flex flex-wrap gap-3 p-4 justify-center">
-                <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
-                    Sign up
-                    <input type="radio" class="invisible absolute" name="auth-option" id="signup-option" checked onclick="toggleFields()" />
-                </label>
-                <label class="text-sm font-medium leading-normal flex items-center justify-center rounded-xl border border-[#4d3465] px-4 h-11 text-white has-[:checked]:border-[3px] has-[:checked]:px-3.5 has-[:checked]:border-[#8019e6] relative cursor-pointer">
-                    Log in
-                    <input type="radio" class="invisible absolute" name="auth-option" id="login-option" onclick="toggleFields()" />
-                </label>
-            </div>
-
-            <!-- Email Field (Hidden in Login Mode) -->
-            <div id="email-field" class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3 justify-center">
-                <label class="flex flex-col min-w-40 flex-1">
-                    <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
-                    <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter your email" />
-                </label>
-            </div>
-  
-
-            <!-- Username Field -->
-            <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-white text-base font-medium leading-normal pb-2">Username</p>
-                <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter username" />
-              </label>
-            </div>
-
-            <!-- Password Field -->
-            <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-white text-base font-medium leading-normal pb-2">Password</p>
-                <input type="password" class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter password" />
-              </label>
-            </div>
-
-            <!-- Continue Button -->
-            <div class="flex px-4 py-3 min-w-[480px] mt-[20]">
-              <a href="dashboard.html">
-                <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
-                <span class="truncate">
-                  Continue
-                </span>
+            <!-- Content page for the sign-up page -->
+            <div id = "sign-up-page" class = "content">
+              
+              <!-- Sign up with Google -->
+              <div>
+                <button class="google-sign-in flex gap-2"> 
+                  <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="google-logo">
+                  Sign up with Google
                 </button>
-              </a>
+              </div>
+
+              <div class = "flex items-center justify-center my-4" style= "margin-top: 30px">
+                <hr class = "w-full border-gray-300" style = "margin-left: 17px">
+                <span class = "px-3 text-sm"> Or </span>
+                <hr class = "w-full border-gray-300" style = "margin-right: 17px">
+              </div>
+
+              <!-- Email Field -->
+              <div id="email-field" class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3 justify-center">
+                  <label class="flex flex-col min-w-40 flex-1">
+                      <p class="text-white text-base font-medium leading-normal pb-2">Email</p>
+                      <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter your email" />
+                  </label>
+              </div>
+    
+
+              <!-- Username Field -->
+              <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-white text-base font-medium leading-normal pb-2">Username</p>
+                  <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter username" />
+                </label>
+              </div>
+
+              <!-- Password Field -->
+              <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-white text-base font-medium leading-normal pb-2">Password</p>
+                  <div class = "toggle-eye">
+                    <input type="password" class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter password" />
+                    <i class = "fas fa-eye toggle-icon"></i>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Continue Button -->
+              <div class="flex px-4 py-3 min-w-[480px] mt-[5px]">
+                <a href="dashboard.html">
+                  <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
+                  <span class="truncate">
+                    Continue
+                  </span>
+                  </button>
+                </a>
+              </div>
+              
+              <!-- Terms & Conditions -->
+              <p id="notice" class="text-[#ad93c8] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
+                By signing up, you agree to our Terms of Service and Privacy Policy.
+              </p>
             </div>
 
-            <!-- Terms & Conditions -->
-            <p id="notice" class="text-[#ad93c8] text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              By signing up, you agree to our Terms of Service and Privacy Policy.
-            </p>
+            <!-- Content page for the login page -->
+            <div id = "login-page" class = "content active">
+              <div>
+                <button class="google-sign-in flex gap-2"> 
+                  <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo" class="google-logo">
+                  Continue with Google
+                </button>
+              </div>
 
-          </div>
+              <div class = "flex items-center justify-center my-4" style= "margin-top: 30px">
+                <hr class = "w-full border-gray-300" style = "margin-left: 17px">
+                <span class = "px-3 text-sm"> Or </span>
+                <hr class = "w-full border-gray-300" style = "margin-right: 17px">
+              </div>
+
+              <!-- Username Field -->
+              <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-white text-base font-medium leading-normal pb-2">Username</p>
+                  <input class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter username" />
+                </label>
+              </div>
+
+              <!-- Password Field -->
+              <div class="flex min-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+                <label class="flex flex-col min-w-40 flex-1">
+                  <p class="text-white text-base font-medium leading-normal pb-2">Password</p>
+                  <div class = "toggle-eye">
+                    <input type="password" class="form-input flex w-full min-w-0 rounded-xl text-white bg-[#362447] h-14 p-4" placeholder="Enter password" />
+                    <i class = "fas fa-eye toggle-icon"></i>
+                  </div>
+                </label>
+              </div>
+
+              <div style="margin-left: 17px; margin-top: 8px; font-size: 13px; font-weight:300">
+                <a href="">Forgot Password?</a>
+              </div>
+
+              <!-- Continue Button -->
+              <div class="flex px-4 py-3 min-w-[480px] mt-[10]">
+                <a href="dashboard.html">
+                  <button class="pt-[10px] pb-[10px] flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center rounded-xl h-35 px-4 flex-1 bg-[#8019e6] text-white text-sm font-bold transition transform hover:scale-105 active:scale-95">
+                  <span class="truncate">
+                    Log in
+                  </span>
+                  </button>
+                </a>
+              </div>
+
+              <div style="margin-left: 17px; margin-top: 8px; font-size: 13px; font-weight:300">
+                Don't have an account? 
+                <a href = "" style = "color:#1E90FF;">Sign up</a>
+              </div>
+
+          </div> 
         </div>
 
       </div>

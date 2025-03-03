@@ -70,13 +70,44 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// make email field and notice disappear if login
-function toggleFields() {
-  const emailField = document.getElementById("email-field");
-  const notice = document.getElementById("notice");
-  const isLogin = document.getElementById("login-option").checked;
+// To toggle between the log in and sign up in sign up page
+function showContent(sectionId) {
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
 
-  // Hide email field if Login is selected, otherwise show it
-  emailField.style.display = isLogin ? "none" : "flex";
-  notice.style.display = isLogin ? "none" : "flex";
+    const activeContent = document.getElementById(sectionId);
+    if (activeContent) {
+            activeContent.classList.add('active');
+    }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const section = params.get("section");
+    if (section) {
+        showContent(section);
+        document.getElementById("login-page").checked = true;
+        document.getElementById("sign-up-page").checked = false;
+    }
+});
+
+const toggleIcons = document.querySelectorAll(".toggle-icon");
+
+toggleIcons.forEach((icon) => {
+    icon.addEventListener("click", function () {
+        const passwordField = icon.previousElementSibling;
+
+        if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+          } else {
+            passwordField.type = "password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+          }
+        });
+      });
+
