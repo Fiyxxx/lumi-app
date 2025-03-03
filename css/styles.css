@@ -45,3 +45,11 @@ body {
 a {
     text-decoration: none;
 }
+
+.content.active {
+    display: block; /* Show the active content section */
+}
+
+.content {
+    display: none; /* Blocks all content by default */
+}
